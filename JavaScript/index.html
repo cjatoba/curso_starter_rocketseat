@@ -8,19 +8,16 @@
 <body>
 
     <script>
-        //Operações matemáticas
-        var x = 10, y = 5;
+        //Funções
+        function soma(num1, num2){
+            var resultado = num1 + num2;
 
-        // Retorna o resto de uma divisão
-        var mod = x % y;
+            return resultado;
+        }
 
-        // O mesmo que x = x + 3;
-        x += 3;
+        var resultado = soma(1,2);
 
-        // O mesmo que x = x + y;
-        x += y;
-
-        console.log(mod);
+        console.log(resultado);
     </script>
     
 </body>
