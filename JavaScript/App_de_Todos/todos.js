@@ -17,9 +17,14 @@ function renderTodos(){
         var todoText = document.createTextNode(todo);
 
         var linkElement = document.createElement('a');
-        var linkText = document.createTextNode('Excluir');
 
         linkElement.setAttribute('href', '#');
+
+        //Procura no array de todos o índice do todo com o texto passado
+        var pos = todos.indexOf(todo);
+        linkElement.setAttribute('onclick', 'deleteTodo(' + pos + ')')
+
+        var linkText = document.createTextNode('Excluir');
 
         linkElement.appendChild(linkText);
 
@@ -41,6 +46,9 @@ function addTodo(){
     renderTodos();
 }
 
-
-
 buttonElement.onclick = addTodo;
+
+function deleteTodo(position){
+    todos.splice(todo, 1);
+    renderTodos();
+}
