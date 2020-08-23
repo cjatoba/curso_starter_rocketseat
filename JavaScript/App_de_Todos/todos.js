@@ -2,11 +2,10 @@ var listElement = document.querySelector('#app ul');
 var inputElement = document.querySelector('#app input');
 var buttonElement = document.querySelector('#app button');
 
-var todos = [
-    'Fazer café',
-    'Estudar Javascript',
-    'Acessar a comuniade Rocketseat'
-]
+//Retorna o conteúdo salvo em localstorage e guarda na var todos
+// A forma de atribuir um valor padrão a variável, caso ela não tenha um valor inicial
+//é adicionar || e em seguida o valor, nesse caso um array vazio []
+var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 
 function renderTodos(){
     //Remove todo o conteúdo da lista
@@ -44,11 +43,22 @@ function addTodo(){
     todos.push(todoText);
     inputElement.nodeValue = '';
     renderTodos();
+    saveToStorage();
 }
 
 buttonElement.onclick = addTodo;
 
 function deleteTodo(position){
-    todos.splice(todo, 1);
+    //Remove um elemento do array, o position é o indice
+    // e o 1 é quantos elementos serão removidos a partir do índice
+    todos.splice(position, 1);
     renderTodos();
+    saveToStorage();
+}
+
+function saveToStorage(){
+    //Cria um local de armazenamento chamado list_todos
+    //Só grava falores string, por isso o array não pode ser passado diretament
+    //O JSON.stringify transforma o array de todos em string
+    localStorage.setItem('list_todos', JSON.stringify(todos));
 }
