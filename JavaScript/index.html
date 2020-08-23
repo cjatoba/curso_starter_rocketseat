@@ -5,31 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de Javascript Rocketseat</title>
 </head>
+<body><!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso de Javascript Rocketseat</title>
+</head>
 <body>
-
     <script>
-        //Tipos de variáveis
-        var nome = "Clayton";
-        var idade = 34;
-        var peso = 90.1;
-        var humano = true;
+        //Condicionais
+        function retornaSexoIf(sexo){
+            if(sexo === 'M'){
+                return 'Masculino';
+            }else{
+                return 'Feminino';
+            }
 
-        //Array
-        var alunos = ['Clayton', 'José', 'Manoel'];
+            return resultado;
+        }
 
-        //Objeto
-        var aluno = {
-            nome: 'Clayton',
-            idade: 34,
-            peso: 90.1,
-            humano: true
-        };
+        function retornaSexoSwitch(sexo){
+            switch(sexo){
+                case 'M':
+                    return 'Masculino';
+                case 'F':
+                    return 'Feminino';
+            }
+        }
 
-        //chamada de um array
-        console.log(alunos[0]);
-        //chamada de um objeto
-        console.log(aluno.nome);
+        var resultadoIf = retornaSexoIf('M');
+        var resultadoSwitch = retornaSexoSwitch('F');
+
+        console.log(resultadoIf);
+        console.log(resultadoSwitch);
     </script>
-    
 </body>
 </html>

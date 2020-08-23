@@ -3,20 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Curso de Javascript Rocketseat - Condicionais</title>
+</head>
+<body><!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso de Javascript Rocketseat</title>
 </head>
 <body>
     <script>
         //Condicionais
-        function retornaSexo(sexo){
-            
+        function retornaSexoIf(sexo){
+            if(sexo === 'M'){
+                return 'Masculino';
+            }else{
+                return 'Feminino';
+            }
 
             return resultado;
         }
 
-        var resultado = retornaSexo('M');
+        function retornaSexoSwitch(sexo){
+            switch(sexo){
+                case 'M':
+                    return 'Masculino';
+                case 'F':
+                    return 'Feminino';
+            }
+        }
 
-        console.log(resultado);
+        var resultadoIf = retornaSexoIf('M');
+        var resultadoSwitch = retornaSexoSwitch('F');
+
+        console.log(resultadoIf);
+        console.log(resultadoSwitch);
     </script>
 </body>
 </html>
